@@ -27,9 +27,12 @@ ant.move file:"${pluginBasedir}/grails-app/conf/log4j.xml", todir:"${basedir}/we
 ant.move file:"${pluginBasedir}/grails-app/conf/log4j.dtd", todir:"${basedir}/web-app/WEB-INF"
 ant.move file:"${pluginBasedir}/grails-app/conf/dwr.xml", todir:"${basedir}/web-app/WEB-INF"
 ant.move file:"${pluginBasedir}/grails-app/conf/dwr20.dtd", todir:"${basedir}/web-app/WEB-INF"
-ant.move (todir:"${basedir}/web-app", overwrite: true) {
+ant.move (todir:"${basedir}/web-app", overwrite: false) {
 			fileset dir:"${pluginBasedir}/web-app"
 }		
+
+ant.unzip src:"${basedir}/web-app/resources.zip", dest:"${basedir}/web-app/resources"
+ant.delete file:"${basedir}/web-app/resources.zip"
 
 updateConfig()
 
