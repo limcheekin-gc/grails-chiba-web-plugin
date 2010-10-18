@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xf="http://www.w3.org/2002/xforms"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      lang="de">
+    <head>
+        <title>Input</title>
+
+        <style type="text/css">
+            .xfGroupLabel{
+                font-size:12pt;
+                font-weight: bold;
+                padding-bottom: 10px;
+            }
+
+            #mips .xfTrigger .dijitButtonContents{width:200px;}
+        </style>
+
+    </head>
+    <body class="tundra" style="margin:30px;">
+
+        <div id="xforms">
+            <div style="display:none;">
+                <xf:model id="model-1">
+                    <xf:instance id="instance-1" xmlns="">
+                        <data constraint="true" readonly="false" required="false" relevant="true">
+                            <items>
+                                <item>foo</item>
+                                <item></item>
+                                <item>2007-10-10</item>
+                            </items>
+                        </data>
+                    </xf:instance>
+
+                    <xf:bind nodeset="items">
+                        <xf:bind nodeset="item[1]"
+                                 constraint="boolean-from-string(../../@constraint)"
+                                 readonly="boolean-from-string(../../@readonly)"
+                                 required="boolean-from-string(../../@required)"
+                                 relevant="boolean-from-string(../../@relevant)"/>
+
+                        <xf:bind nodeset="item[2]"
+                                 constraint="boolean-from-string(../../@constraint)"
+                                 readonly="boolean-from-string(../../@readonly)"
+                                 required="boolean-from-string(../../@required)"
+                                 relevant="boolean-from-string(../../@relevant)"
+                                 type="xf:boolean"/>
+
+                        <xf:bind nodeset="item[3]"
+                                 constraint="boolean-from-string(../../@constraint)"
+                                 readonly="boolean-from-string(../../@readonly)"
+                                 required="boolean-from-string(../../@required)"
+                                 relevant="boolean-from-string(../../@relevant)"
+                                 type="xf:date"/>
+                    </xf:bind>
+
+                </xf:model>
+            </div>
+
+            <xf:group appearance="full" ref="items">
+                <xf:label>XForms Input Control</xf:label>
+                <xf:input id="control1" ref="item[1]" incremental="true">
+                    <xf:label>a standard input</xf:label>
+                    <xf:hint>This is a standard input control</xf:hint>
+                    <xf:alert>This control is invalid</xf:alert>
+                </xf:input>
+                <xf:input id="control2" ref="item[2]" incremental="true">
+                    <xf:label>a boolean input</xf:label>
+                    <xf:hint>This is a input control bound to a boolean node</xf:hint>
+                    <xf:help>Not much to say here</xf:help>
+                    <xf:alert>This control is invalid</xf:alert>
+                </xf:input>
+                <xf:input id="control3" ref="item[3]" incremental="true">
+                    <xf:label>a date input</xf:label>
+                    <xf:hint>This is a input control bound to a date node</xf:hint>
+                    <xf:help>Not much to say here</xf:help>
+                    <xf:alert>This control is invalid</xf:alert>
+                </xf:input>
+            </xf:group>
+        </div>
+
+        <xf:group id="mips" ref="/data">
+            <xf:label>Model Item Property Tests</xf:label>
+            <!-- valid -->
+            <xf:trigger ref="@constraint[boolean-from-string(.)]">
+                <xf:label>set all controls to invalid</xf:label>
+                <xf:action>
+                    <xf:setvalue ref="." value="'false'"/>
+                </xf:action>
+            </xf:trigger>
+            <xf:trigger ref="@constraint[not(boolean-from-string(.))]">
+                <xf:label>set all controls to valid</xf:label>
+                <xf:action>
+                    <xf:setvalue ref="." value="'true'"/>
+                </xf:action>
+            </xf:trigger>
+
+            <!-- readonly -->
+            <xf:trigger ref="@readonly[not(boolean-from-string(.))]">
+                <xf:label>set all controls to readonly</xf:label>
+                <xf:action>
+                    <xf:setvalue ref="." value="'true'"/>
+                </xf:action>
+            </xf:trigger>
+            <xf:trigger ref="@readonly[boolean-from-string(.)]">
+                <xf:label>set all controls to readwrite</xf:label>
+                <xf:action>
+                    <xf:setvalue ref="." value="'false'"/>
+                </xf:action>
+            </xf:trigger>
+
+            <!-- required -->
+            <xf:trigger ref="@required[not(boolean-from-string(.))]">
+                <xf:label>set all controls to required</xf:label>
+                <xf:action>
+                    <xf:setvalue ref="." value="'true'"/>
+                </xf:action>
+            </xf:trigger>
+            <xf:trigger ref="@required[boolean-from-string(.)]">
+                <xf:label>set all controls to optional</xf:label>
+                <xf:action>
+                    <xf:setvalue ref="." value="'false'"/>
+                </xf:action>
+            </xf:trigger>
+
+            <!-- relevant -->
+            <xf:trigger ref="@relevant[boolean-from-string(.)]">
+                <xf:label>set all controls to non-relevant</xf:label>
+                <xf:action>
+                    <xf:setvalue ref="." value="'false'"/>
+                </xf:action>
+            </xf:trigger>
+            <xf:trigger ref="@relevant[not(boolean-from-string(.))]">
+                <xf:label>set all controls to relevant</xf:label>
+                <xf:action>
+                    <xf:setvalue ref="." value="'true'"/>
+                </xf:action>
+            </xf:trigger>
+        </xf:group>
+    </body>
+</html>
+
