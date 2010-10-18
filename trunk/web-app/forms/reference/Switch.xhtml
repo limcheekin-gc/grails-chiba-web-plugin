@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xf="http://www.w3.org/2002/xforms"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:chiba="http://chiba.sourceforge.net/xforms">
+<head>
+    <title>Switch</title>
+
+    <style type="text/css">
+
+        .xfGroupLabel {
+            font-weight: bold;
+            font-size: 14pt;
+            margin-bottom: 10px;
+        }
+
+        .xfLabel {
+            display: block;
+            float: left;
+            width: 100px;
+        }
+        #color1 {
+            background:lemonchiffon;
+        }
+        #color2 {
+            background:lightblue;
+        }
+        #color3 {
+            background:lightgreen;
+        }
+        #color4 {
+            background:lightpink;
+        }
+        .xfTrigger {
+            float:left;
+            margin:5px;
+        }
+        #menu {
+            height:80px;
+        }
+        .caseGroup {
+            height:100px;
+        }
+
+    </style>
+
+</head>
+
+<body class="tundra" style="overflow:hidden;padding:50px;">
+<div id="xforms">
+    <div style="display:none;">
+        <xf:model id="model-1">
+            <xf:instance id="instance-1" xmlns="">
+                <data constraint="true" readonly="false" required="false" relevant="true"/>
+            </xf:instance>
+        </xf:model>
+
+    </div>
+</div>
+<xf:group>
+    <xf:label>Switch / Case</xf:label>
+    <xf:group id="menu" appearance="full">
+        <xf:label>Triggers outside Switch / Case</xf:label>
+        <xf:trigger>
+            <xf:label>Case 1</xf:label>
+            <xf:toggle case="case1"/>
+        </xf:trigger>
+        <xf:trigger>
+            <xf:label>Case 2</xf:label>
+            <xf:toggle case="case2"/>
+        </xf:trigger>
+        <xf:trigger>
+            <xf:label>Case 3</xf:label>
+            <xf:toggle case="case3"/>
+        </xf:trigger>
+        <xf:trigger>
+            <xf:label>Case 4</xf:label>
+            <xf:toggle case="case4"/>
+        </xf:trigger>
+
+    </xf:group>
+    <xf:switch>
+        <xf:case id="case1" >
+            <xf:group id="color1" appearance="full" class="caseGroup">
+                <xf:label>Case 1</xf:label>
+                <div>Triggers within Case 1:</div>
+                <xf:trigger>
+                    <xf:label>Case 1</xf:label>
+                    <xf:message level="ephemeral">Case 1 is selected</xf:message>
+                </xf:trigger>
+                <xf:trigger>
+                    <xf:label>Case 2</xf:label>
+                    <xf:toggle case="case2"/>
+                </xf:trigger>
+                <xf:trigger>
+                    <xf:label>Case 3</xf:label>
+                    <xf:toggle case="case3"/>
+                </xf:trigger>
+                <xf:trigger>
+                    <xf:label>Case 4</xf:label>
+                    <xf:toggle case="case4"/>
+                </xf:trigger>
+            </xf:group>
+        </xf:case>
+        <xf:case id="case2">
+            <xf:group id="color2" appearance="full" class="caseGroup">
+                <xf:label>Case 2</xf:label>
+                <div>Triggers within Case 2:</div>
+                <xf:trigger>
+                    <xf:label>Case 1</xf:label>
+                    <xf:toggle case="case1"/>
+                </xf:trigger>
+                <xf:trigger>
+                    <xf:label>Case 2</xf:label>
+                    <xf:message level="ephemeral">Case 2 is selected</xf:message>
+                </xf:trigger>
+
+                <xf:trigger>
+                    <xf:label>Case 3</xf:label>
+                    <xf:toggle case="case3"/>
+                </xf:trigger>
+                <xf:trigger>
+                    <xf:label>Case 4</xf:label>
+                    <xf:toggle case="case4"/>
+                </xf:trigger>
+            </xf:group>
+        </xf:case>
+        <xf:case id="case3">
+            <xf:group id="color3" appearance="full" class="caseGroup">
+                <xf:label>Case 3</xf:label>
+                <div>Triggers within Case 3:</div>
+                <xf:trigger>
+                    <xf:label>Case 1</xf:label>
+                    <xf:toggle case="case1"/>
+                </xf:trigger>
+                <xf:trigger>
+                    <xf:label>Case 2</xf:label>
+                    <xf:toggle case="case2"/>
+                </xf:trigger>
+                <xf:trigger>
+                    <xf:label>Case 3</xf:label>
+                    <xf:message level="ephemeral">Case 3 is selected</xf:message>
+                </xf:trigger>
+
+                <xf:trigger>
+                    <xf:label>Case 4</xf:label>
+                    <xf:toggle case="case4"/>
+                </xf:trigger>
+            </xf:group>
+        </xf:case>
+        <xf:case id="case4">
+            <xf:group id="color4" appearance="full" class="caseGroup">
+                <xf:label>Case 4</xf:label>
+                <div>Triggers within Case 4:</div>
+                <xf:trigger>
+                    <xf:label>Case 1</xf:label>
+                    <xf:toggle case="case1"/>
+                </xf:trigger>
+                <xf:trigger>
+                    <xf:label>Case 2</xf:label>
+                    <xf:toggle case="case2"/>
+                </xf:trigger>
+                <xf:trigger>
+                    <xf:label>Case 3</xf:label>
+                    <xf:toggle case="case3"/>
+                </xf:trigger>
+                <xf:trigger>
+                    <xf:label>Case 4</xf:label>
+                    <xf:message level="ephemeral">Case 4 is selected</xf:message>
+                </xf:trigger>
+            </xf:group>
+        </xf:case>
+    </xf:switch>
+</xf:group>
+</body>
+</html>

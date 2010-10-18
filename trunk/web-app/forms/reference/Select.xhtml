@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xf="http://www.w3.org/2002/xforms"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      lang="de">
+    <head>
+        <title>Select</title>
+
+        <style type="text/css">
+            .xfGroupLabel {
+                font-size: 12pt;
+                font-weight: bold;
+                padding-bottom: 10px;
+            }
+
+            #mips{diplay:block;}
+            
+            #mips .xfTrigger .dijitButtonContents {
+                width: 200px;
+            }
+            /*#control2{display:block;}*/
+            #control2 .xfSelectorItem .xfLabel{width:20px;}
+        </style>
+
+    </head>
+    <body class="tundra" style="margin:30px;">
+
+        <div id="xforms">
+            <div style="display:none;">
+                <xf:model id="model-1">
+                    <xf:instance id="instance-1" xmlns="">
+                        <data constraint="true" readonly="false" required="false" relevant="true">
+                            <items>
+                                <item>AX</item>
+                                <item>valueBar</item>
+                            </items>
+                        </data>
+                    </xf:instance>
+
+                    <xf:bind nodeset="items">
+                        <xf:bind nodeset="item[1]"
+                                 constraint="boolean-from-string(../../@constraint)"
+                                 readonly="boolean-from-string(../../@readonly)"
+                                 required="boolean-from-string(../../@required)"
+                                 relevant="boolean-from-string(../../@relevant)"/>
+
+                        <xf:bind nodeset="item[2]"
+                                 constraint="boolean-from-string(../../@constraint)"
+                                 readonly="boolean-from-string(../../@readonly)"
+                                 required="boolean-from-string(../../@required)"
+                                 relevant="boolean-from-string(../../@relevant)"/>
+                    </xf:bind>
+
+
+                    <xf:instance id="codes" xmlns="">
+                        <countrylist lang="en">
+                            <country>
+                                <country-name>AFGHANISTAN</country-name>
+                                <code>AF</code>
+                            </country>
+                            <country>
+                                <country-name>LAND ISLANDS</country-name>
+                                <code>AX</code>
+                            </country>
+                            <country>
+                                <country-name>ALBANIA</country-name>
+                                <code>AL</code>
+                            </country>
+                            <country>
+                                <country-name>ALGERIA</country-name>
+                                <code>DZ</code>
+                            </country>
+                            <country>
+                                <country-name>AMERICAN SAMOA</country-name>
+                                <code>AS</code>
+                            </country>
+                            <country>
+                                <country-name>ANDORRA</country-name>
+                                <code>AD</code>
+                            </country>
+                            <country>
+                                <country-name>ANGOLA</country-name>
+                                <code>AO</code>
+                            </country>
+                            <country>
+                                <country-name>ANGUILLA</country-name>
+                                <code>AI</code>
+                            </country>
+                            <country>
+                                <country-name>ANTARCTICA</country-name>
+                                <code>AQ</code>
+                            </country>
+                        </countrylist>
+                    </xf:instance>
+                </xf:model>
+            </div>
+
+            <xf:group appearance="full" ref="items">
+                <xf:label>XForms Select Control</xf:label>
+
+                <xf:select ref="item[1]">
+                    <xf:label>appearance = 'minimal'</xf:label>
+                    <xf:hint>a standard select with minimal appearance</xf:hint>
+                    <xf:alert>The input value is not valid</xf:alert>
+                    <xf:help>Standard appearance for Select</xf:help>
+                    <xf:itemset nodeset="instance('codes')/country">
+                        <xf:label ref="country-name"/>
+                        <xf:value ref="code"/>
+                    </xf:itemset>
+                </xf:select>
+
+                <xf:select id="control2" ref="item[2]" appearance="full">
+                    <xf:label>appearance = 'full'</xf:label>
+                    <xf:hint>This is a standard select control</xf:hint>
+                    <xf:help>Not much to say here but some basic html formatting
+                        is <b>possible</b></xf:help>
+                    <xf:alert>The select value is not valid</xf:alert>
+                    <xf:choices>
+                        <xf:item>
+                            <xf:label>foo</xf:label>
+                            <xf:value>valueFoo</xf:value>
+                        </xf:item>
+                        <xf:item>
+                            <xf:label>bar</xf:label>
+                            <xf:value>valueBar</xf:value>
+                        </xf:item>
+                        <xf:item>
+                            <xf:label>baz</xf:label>
+                            <xf:value>valueBaz</xf:value>
+                        </xf:item>
+                    </xf:choices>
+                </xf:select>
+            </xf:group>
+        </div>
+
+        <xf:group id="mips">
+            <xf:label>Model Item Property Tests</xf:label>
+            <!-- valid -->
+            <xf:trigger ref="@constraint[boolean-from-string(.)]">
+                <xf:label>set all controls to invalid</xf:label>
+                <xf:action>
+                    <xf:setvalue ref="." value="'false'"/>
+                </xf:action>
+            </xf:trigger>
+            <xf:trigger ref="@constraint[not(boolean-from-string(.))]">
+                <xf:label>set all controls to valid</xf:label>
+                <xf:action>
+                    <xf:setvalue ref="." value="'true'"/>
+                </xf:action>
+            </xf:trigger>
+
+            <!-- readonly -->
+            <xf:trigger ref="@readonly[not(boolean-from-string(.))]">
+                <xf:label>set all controls to readonly</xf:label>
+                <xf:action>
+                    <xf:setvalue ref="." value="'true'"/>
+                </xf:action>
+            </xf:trigger>
+            <xf:trigger ref="@readonly[boolean-from-string(.)]">
+                <xf:label>set all controls to readwrite</xf:label>
+                <xf:action>
+                    <xf:setvalue ref="." value="'false'"/>
+                </xf:action>
+            </xf:trigger>
+
+            <!-- required -->
+            <xf:trigger ref="@required[not(boolean-from-string(.))]">
+                <xf:label>set all controls to required</xf:label>
+                <xf:action>
+                    <xf:setvalue ref="." value="'true'"/>
+                </xf:action>
+            </xf:trigger>
+            <xf:trigger ref="@required[boolean-from-string(.)]">
+                <xf:label>set all controls to optional</xf:label>
+                <xf:action>
+                    <xf:setvalue ref="." value="'false'"/>
+                </xf:action>
+            </xf:trigger>
+
+            <!-- relevant -->
+            <xf:trigger ref="@relevant[boolean-from-string(.)]">
+                <xf:label>set all controls to non-relevant</xf:label>
+                <xf:action>
+                    <xf:setvalue ref="." value="'false'"/>
+                </xf:action>
+            </xf:trigger>
+            <xf:trigger ref="@relevant[not(boolean-from-string(.))]">
+                <xf:label>set all controls to relevant</xf:label>
+                <xf:action>
+                    <xf:setvalue ref="." value="'true'"/>
+                </xf:action>
+            </xf:trigger>
+        </xf:group>
+    </body>
+</html>

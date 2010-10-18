@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: appearance.xhtml 2605 2007-07-11 09:20:38Z joern $ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+        <title>Appearances for Groups</title>
+        <xf:model>
+            <xf:submission id="debug" replace="all" action="{$contextroot}/resources/jsp/debug-instance.jsp"
+                           method="post"/>
+            <xf:instance xmlns="">
+                <data>
+                    <grouped-data>
+                        <a>aaa</a>
+                        <b>bbb</b>
+                        <c>ccc</c>
+                        <d>ddd</d>
+                    </grouped-data>
+                </data>
+            </xf:instance>
+        </xf:model>
+        <style type="text/css">
+
+            .header {
+                font-size: 14pt;
+                font-weight: bold;
+                display: block;
+                clear: both;
+            }
+
+            .xfInput .xfValue {
+                width: 60px;
+            }
+
+            .xfMinimalGroup .xfControl {
+                display: inline;
+            }
+            table{
+                margin:10px;
+            }
+
+        </style>
+    </head>
+    <body class="tundra">
+        <!--<xf:group appearance="minimal">-->
+        <!--<xf:label>This form shows how Chiba interprets the XForms 'appearnce' attribute for groups.</xf:label>-->
+            <xf:group ref="grouped-data" appearance="minimal">
+                <xf:label>
+                    <b>Minimal Group</b> produces a flow layout which can be styled with CSS.
+                </xf:label>
+                <xf:input ref="a">
+                    <xf:label>A-label</xf:label>
+                </xf:input>
+                <xf:input ref="b">
+                    <xf:label>Bb-label</xf:label>
+                </xf:input>
+                <xf:input ref="c">
+                    <xf:label>Ccc-label</xf:label>
+                </xf:input>
+                <xf:input ref="d">
+                    <xf:label>Dddd-label</xf:label>
+                </xf:input>
+            </xf:group>
+            <xf:group ref="grouped-data" appearance="compact">
+                <xf:label>
+                    <b>Compact Group</b> uses a horizontal table layout
+                </xf:label>
+                <xf:input ref="a">
+                    <xf:label>A-label</xf:label>
+                </xf:input>
+                <xf:input ref="b">
+                    <xf:label>B-label</xf:label>
+                </xf:input>
+                <xf:input ref="c">
+                    <xf:label>C-label</xf:label>
+                </xf:input>
+                <xf:input ref="d">
+                    <xf:label>D-label</xf:label>
+                </xf:input>
+            </xf:group>
+
+            <xf:group ref="grouped-data" appearance="full">
+                <xf:label>
+                    <b>Full Group</b> uses a two column layout to display controls vertically
+                </xf:label>
+                <xf:input ref="a">
+                    <xf:label>A-label</xf:label>
+                </xf:input>
+                <xf:input ref="b">
+                    <xf:label>Bb-label</xf:label>
+                </xf:input>
+                <xf:input ref="c">
+                    <xf:label>Ccc-label</xf:label>
+                </xf:input>
+                <xf:input ref="d">
+                    <xf:label>Dddd-label</xf:label>
+                </xf:input>
+            </xf:group>
+
+            <xf:group ref="grouped-data" appearance="ca:verticalTable">
+                <xf:label>
+                    <b>Vertical Group</b> rendered as HTML Table
+                </xf:label>
+                <xf:group appearance="ca:verticalTable">
+                    <xf:label>nested vertical group</xf:label>
+                    <xf:input ref="a">
+                        <xf:label>nested a</xf:label>
+                    </xf:input>
+                    <xf:input ref="b">
+                        <xf:label>nested b</xf:label>
+                    </xf:input>
+                </xf:group>
+                <xf:group appearance="ca:verticalTable">
+                    <xf:label>nested group</xf:label>
+                    <xf:input ref="a">
+                        <xf:label>nested a</xf:label>
+                    </xf:input>
+                    <xf:input ref="b">
+                        <xf:label>nested b</xf:label>
+                    </xf:input>
+
+                    <xf:group appearance="ca:verticalTable">
+                        <xf:label>another nested vertical group</xf:label>
+                        <xf:input ref="c">
+                            <xf:label>nested c</xf:label>
+                        </xf:input>
+                        <xf:input ref="d">
+                            <xf:label>nested d</xf:label>
+                        </xf:input>
+                    </xf:group>
+                </xf:group>
+                <xf:input ref="a">
+                    <xf:label>A-label</xf:label>
+                </xf:input>
+                <xf:input ref="b">
+                    <xf:label>Bb-label</xf:label>
+                </xf:input>
+                <xf:input ref="c">
+                    <xf:label>Ccc-label</xf:label>
+                </xf:input>
+                <xf:input ref="d">
+                    <xf:label>Dddd-label</xf:label>
+                </xf:input>
+            </xf:group>
+
+            <xf:group ref="grouped-data" appearance="ca:horizontalTable">
+                <xf:label>
+                    <b>Horizontal Group</b> rendered as HTML Table
+                </xf:label>
+                <xf:input ref="a">
+                    <xf:label>A-label</xf:label>
+                </xf:input>
+                <xf:input ref="b">
+                    <xf:label>Bb-label</xf:label>
+                </xf:input>
+                <xf:input ref="c">
+                    <xf:label>Ccc-label</xf:label>
+                </xf:input>
+                <xf:input ref="d">
+                    <xf:label>Dddd-label</xf:label>
+                </xf:input>
+            </xf:group>
+
+            <xf:group ref="grouped-data" appearance="ca:singleRowTable">
+<!--
+                <xf:label>
+                    <b>Single Row Group</b> rendering all labels and controls in a single Table row
+                </xf:label>
+-->
+                <xf:input ref="a">
+                    <xf:label>A-label</xf:label>
+                </xf:input>
+                <xf:input ref="b">
+                    <xf:label>Bb-label</xf:label>
+                </xf:input>
+                <xf:input ref="c">
+                    <xf:label>Ccc-label</xf:label>
+                </xf:input>
+                <xf:input ref="d">
+                    <xf:label>Dddd-label</xf:label>
+                </xf:input>
+            </xf:group>
+        <!--</xf:group>-->
+    </body>
+</html>

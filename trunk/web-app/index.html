@@ -1,0 +1,312 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Chiba Home</title>
+<meta name="verify-v1" content="bj1zGpSozojt7Vp/Sr5DOAkm/MYVA0sYoSYqsR+OpDk=">
+<link rel="stylesheet" type="text/css" href="resources/styles/chiba-styles.css">
+<style type="text/css">
+                    @import "http://ajax.googleapis.com/ajax/libs/dojo/1.2/dijit/themes/tundra/tundra.css";
+                    @import "http://ajax.googleapis.com/ajax/libs/dojo/1.2/dojo/resources/dojo.css"
+                </style>
+<style type="text/css">
+                    #web3{
+                        border:thin solid;
+                        -moz-border-radius:5px;
+                        padding:30px 30px 10px;
+                        margin:5px 0px 10px 0px;
+                    }
+
+                    #screen1, #screen2{
+                        padding:10px;
+                    }
+                </style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/dojo/1.2/dojo/dojo.xd.js" djConfig="parseOnLoad: true"></script><script type="text/javascript">
+                       dojo.require("dojo.parser");
+                       dojo.require("dijit.TitlePane");
+                       dojo.require("dojo.fx");
+                 </script>
+</head>
+<body bgcolor="#aabbdd" class="tundra" id="indexPage">
+<table id="nav" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tbody>
+<tr>
+<td valign="middle"></td><td valign="Middle"><a href="http://chiba.sourceforge.net"><img style="float:right;margin-right:45px;padding-bottom:5px;" src="resources/images/chiba50t.gif" border="0" vspace="0" alt="Chiba Logo" width="113" height="39"></a>
+<br>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td valign="top" class="leftPane"><font face="sans-serif">
+<div id="navLinks">
+<span>&lt;<a href="index.html">Home</a> /&gt;</span>
+<br>
+<span>&lt;<a href="http://sourceforge.net/project/showfiles.php?group_id=20274">Download</a> /&gt;</span>
+<br>
+<span>&lt;<a href="https://www.chiba-project.org/trac">Wiki</a> /&gt;</span>
+<br>
+<span>&lt;<a href="jsp/forms.jsp" target="_blank">Run Chiba</a> /&gt;</span>
+<br>
+<span>&lt;<a href="results.html" target="_blank">XForms Conformance Report</a> /&gt;</span>
+<br>
+<span>&lt;<a href="ChibaUserGuide.pdf">UserGuide</a> /&gt;</span>
+<br>
+<span>&lt;<a href="CSSReference.pdf">CSS Reference</a> /&gt;</span>
+<br>
+<span>&lt;<a href="http://sourceforge.net/projects/chiba">@Sourceforge</a> /&gt;</span>
+<br>
+<br>
+</div>
+</font></td><td class="content-area" valign="top">
+<div id="main">
+<div id="web3">
+<div class="title">
+                Chiba 3.0.0b2 released
+            </div>
+<div class="para" id="">
+                Chiba 3 is a new major release of the Chiba XForms 1.1 implementation, coming with a brand new
+                JavaScript layer, improved XForms 1.1 support, localisation, XPath 2.0 and more.
+            </div>
+<div class="para" id="">
+                - Chiba is now using Dojo Toolkit Version 1.2.3 (latest) which vastly improves the quality of the UI.
+                The completely rewritten JavaScript layer already comes with compilation and CDN support allowing you
+                to load many parts of the application libs from Google. Dojo components can be seemlessly integrated
+                with XForms processing to add the last missing pieces that make up a full application.
+            </div>
+<div class="para" id="">
+                - Large parts of the Core processor and the Web layer have been heavily refactored and now provide a
+                cleaner API and simplified parts of the Code. Extensibility of the Java API has been greatly improved.
+            </div>
+<div class="para" id="">
+                - The CSS system has been reworked for consistency and there's new documentation available.
+            </div>
+<div class="para" id="">
+                - Conformance has been improved and now Chiba passes 86% of the XForms 1.1E1 Test Suite.
+            </div>
+</div>
+<div class="title">What is it ?</div>
+<div class="para" id="intro">
+            
+<ul>
+<li style="margin:3px;">a ToolKit combining XForms, AJAX and the Dojo toolkit</li>
+<li style="margin:3px;">combines an attractive and extensible set of cross-browser widgets with the rich MVC Model of XForms</li>
+<li style="margin:3px;">Rapid web application building in a declarative way</li>
+</ul>
+        
+</div>
+<div class="title">Screenshoots</div>
+<div class="para" id="">
+            
+<a id="screen1" href="resources/images/Select1ScreenShot.png" target="_blank"><img src="resources/images/Select1ScreenShotSmall.png" alt="Select 1" border="0" halign="left"></a>
+            <a id="screen2" href="resources/images/RepeatScreenShot.png" target="_blank"><img src="resources/images/RepeatScreenShotSmall.png" alt="Select 1" border="0" halign="right"></a>
+        
+</div>
+<div class="para" id="" style="display:block;"></div>
+<div class="title">Key Components</div>
+<div class="subtitle">XForms</div>
+<div class="para" id="">
+	    Chiba is an Open Source Java Implementation of the W3C XForms standard 'that represents the next generation of forms for the Web'. [Abstract of the XForms PR]
+        </div>
+<div class="subtitle">AJAX</div>
+<div class="para" id="">
+            Chiba uses <a href="http://directwebremoting.org">Direct Web Remoting DWR</a> to connect Javascript widgets and containers such as repeat, switch and group to the XForms engine.
+            For page authors absolutely no knowledge of AJAX techniques is required. All the wiring is automatic.
+        </div>
+<div class="subtitle">The Dojo Toolkit</div>
+<div class="para" id="">
+            The <a href="http://dojotoolkit.org">Dojo toolkit</a> is one of the most well-known and highest-quality Javascript libraries around and receives
+            a lot of attention and credits. It provided the ideal foundation for building a Javascript API to support the XForms capabilities of Chiba.
+        </div>
+</div>
+<div class="subtitle">Key features of Chiba</div>
+<ul style="text-decoration:none;margin:0;padding:0;">
+<li style="margin:3px;">
+<div dojotype="dijit.TitlePane" title="Advanced UIs" open="false">
+            By bundling the Dojo Toolkit it's now possible to use the full set of Dojo controls to build
+            application-like UIs with full AJAX and XForms support without needing to write a single line of script
+            or Java code.
+        </div>
+</li>
+<li style="margin:3px;">
+<div dojotype="dijit.TitlePane" title="Styling" open="false">
+            A complete, fine-grained system of CSS classes allows to control the layout and styling of
+            the whole UI. A quick reference card shows all classes available on one sheet.
+        </div>
+</li>
+<li style="margin:3px;">
+<div dojotype="dijit.TitlePane" title="minimal-intrusive" open="false">
+            The Chiba architecture is minimal-intrusive. There's no coding needed to integrate XForms processing
+            into your webapp while still giving you a lot of hooks when tied integration is wanted.
+        </div>
+</li>
+<li style="margin:3px;">
+<div dojotype="dijit.TitlePane" title="zero-install" open="false">
+            There are no plugins or other installations needed to use full XForms in your browser today. It will work
+            for the major browsers (IE6.0+, Safari 3.0+, FF 2.0+ and others).
+        </div>
+</li>
+<li style="margin:3px;">
+<div dojotype="dijit.TitlePane" title="REST" open="false">
+            As HTTP handling and full XML support are built-in it's a matter of minutes to connect a Chiba page to
+            a REST service. XForms is an ideal fit when working with such architectures.
+        </div>
+</li>
+<li style="margin:3px;">
+<div dojotype="dijit.TitlePane" title="XRX" open="false">
+            Chiba nicely supports the XForms Rest XQuery (XRX) paradigm. XQueries can directly be used as data and
+            parameterized through your XForms. Chiba  nicely integrates with the popular Open Source XML database
+            <a href="exist.sourceforge.net">eXist</a>.
+        </div>
+</li>
+<li style="margin:3px;">
+<div dojotype="dijit.TitlePane" title="noscript fallback" open="false">
+            In restricted environments often JavaScript is filtered or prohibited. Chiba forms will continue to work
+            the best way a request/response interface can give you.
+        </div>
+</li>
+<li style="margin:3px;">
+<div dojotype="dijit.TitlePane" title="components" open="false">
+            It's easy to integrate new components and enhance the set of available controls. Not only all Dojo controls
+            might be used but additionally any JavaScript can be integrated and used under the package loading system
+            of Dojo thereby getting the advantages of JavaScript compilation, compression and layering of scripts.
+        </div>
+</li>
+<li style="margin:3px;">
+<div dojotype="dijit.TitlePane" title="typing, validation and calculation" open="false">
+            Data typing will come to your pages by simple declarations. The
+            full set of XML Schema types plus your own extensions can be used. XForms constraints allow to apply further
+            facets to any data node. Along with the capability to execute calculations in a similar declarative way
+            you never have to worry about invalid data in your backend again.
+        </div>
+</li>
+<li style="margin:3px;">
+<div dojotype="dijit.TitlePane" title="declarative application building" open="false">
+            Both XForms and Dojo follow a declarative approach to page building. This is a perfect match - both can co-exist
+            with interference and interact in a controlled manner. No manual scripting will be needed unless you like
+            to write your own components.
+        </div>
+</li>
+<li style="margin:3px;">
+<div dojotype="dijit.TitlePane" title="Connectors" open="false">
+            Usually some sort of persistence backend will make your apps powerful and you'll need to seemlessly
+            integrate with arbritary datasources. Chiba already supports the most common protocols but can also
+            be easily extended to dock to any datasource. These connectors can be plugged by configuration and
+            can be combined with any other connector in a page.
+       </div>
+</li>
+<li style="margin:3px;">
+<div dojotype="dijit.TitlePane" title="Open Source License" open="false">
+            Starting with Chiba Web 3.0.0b1 Chiba will be available under the liberal BSD and Apache 2 licenses. This
+            allows unlimited commercial use. Professional support will be available from the admins of the project.
+            Please contact us.
+        </div>
+</li>
+</ul>
+<div class="subtitle" id="supported">Supported by</div>
+<div class="para" id="">
+        
+<table>
+            
+<tr>
+                
+<td width="25%">
+                    <span>
+                        <a href="http://www.jetbrains.com/idea/" style="display:block; width:88px; height:31px; border:0; margin:0;padding:0;text-decoration:none;text-indent:0;">
+                            <img src="http://www.jetbrains.com/idea/opensource/img/banners/idea88x31_white.gif" alt="The best Java IDE" border="0">
+                        </a>
+                    </span>
+
+                </td>
+                <td width="25%">
+                </td>                
+                <td width="50%">
+<!--
+                    <div align="left" style="font-size:9pt;border:thin solid;margin:1px;padding:5px;">
+                        YourKit is kindly supporting "Chiba" project with its full-featured Java Profiler. YourKit, LLC
+                        is creator of innovative and intelligent tools for profiling Java and .NET applications.
+                        Take a look at YourKit's leading software products:<br/> 
+                        <a href="http://www.yourkit.com">YourKit Java Profiler</a> and
+                        <a href="http://www.yourkit.com">YourKit .NET Profiler</a>.
+                    </div>
+-->
+
+                </td>
+            
+</tr>
+        
+</table>
+
+    
+</div>
+</td><td width="150" id="news" valign="top"><span class="subtitle">
+                                    News
+                                    </span>
+<div class="headline" id="important">
+<span class="date">June, 25 2009</span><span style="text-size:-1;">
+            
+<div class="subtitle">
+                
+<a href="http://sourceforge.net/project/showfiles.php?group_id=20274&package_id=16465&release_id=570513" target="_blank">Chiba Core 1.5.0 released</a>
+            
+</div>
+            
+<div class="para" id="">Chiba 3.0.0b2 is ready. This is mainly a quality release with hundreds of improvements. Chiba now passes 86% of the normative tests of the XForms 1.1E1 test suite.</div>
+        
+</span>
+</div>
+<div class="headline" id="important">
+<span class="date">December, 19 2008</span><span style="text-size:-1;">
+            
+<div class="subtitle">
+                
+<a href="http://sourceforge.net/project/showfiles.php?group_id=20274&package_id=16465&release_id=570513" target="_blank">Chiba Core 1.5.0 released</a>
+            
+</div>
+            
+<div class="para" id="">Chiba Web 3.0.0b1 is out. Completely renewed with new JavaScript layer, improved XForms 1.1 support, localisation, XPath 2.0 and more.</div>
+        
+</span>
+</div>
+<div class="headline" id="important">
+<span class="date">August, 19 2008</span><span style="text-size:-1;">
+            
+<div class="subtitle">
+                
+<a href="http://sourceforge.net/project/showfiles.php?group_id=20274&package_id=16465&release_id=570513" target="_blank">Chiba Core 1.5.0 released</a>
+            
+</div>
+            
+<div class="para" id="">Chiba, the modular XForms processor has released a new Core version featuring migration to Saxon for XPath 2.0 support, many XForms 1.1 functions as well as further new XForms 1.1 features.</div>
+        
+</span>
+</div>
+<span id="osi"><a href="http://www.opensource.org/docs/certification_mark.php"><img src="resources/images/osi-certified-72x60.png" width="72" height="60" border="0" alt="Open Source Initiative"></a></span></td>
+</tr>
+</table>
+<div id="footer">
+<font face="sans-serif" size="-1">
+<center>
+                    Hosted by
+                            <a href="http://sourceforge.net"><img alt="SourceForge Logo" border="0" height="31" src="http://sourceforge.net/sflogo.php?group_id=23211&type=1" width="88"></a>
+</center>
+<div align="right">&copy; 2001-2005 Chiba Project</div>
+<div align="right">last update: </div>
+<div align="right">author: <a href="mailto:joernt@users.sourceforge.net">joernt</a>/<a href="mailto:windauer@users.sourceforge.net">lars</a>
+</div>
+</font>
+</div>
+<script type="text/javascript">
+                    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+                    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+                </script><script type="text/javascript">
+                    try {
+                    
+                            var pageTracker = _gat._getTracker("UA-6761283-1");
+                        
+                        pageTracker._trackPageview();
+                    }
+                    catch(err) {}
+                </script>
+</body>
+</html>
